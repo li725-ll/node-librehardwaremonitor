@@ -1,3 +1,14 @@
 import LibreHardwareMonitor from "../src/main";
 
-LibreHardwareMonitor.getHardwareMessage();
+async function test (){
+  const message = await LibreHardwareMonitor.getHardwareMessage();
+  const result = await LibreHardwareMonitor.setFanSpeed("", 1);
+
+  if (message && result != undefined){
+    console.log("success");
+  }else{
+    console.log("fail");
+  }
+}
+
+test();

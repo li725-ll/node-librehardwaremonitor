@@ -10,12 +10,16 @@ function getHardwareMessage(){
    typeName: "LibreHardwareMonitor.Entrypoint.NodeLibreHardwareMonitorLib",
    methodName: "GetHardwareMessage",
   };
-  edge.func(GetHardwareMessage)(null, (err, res)=>{
-    if(err){
-      console.log(err);
-    }
-    console.log(res);
-  })
+
+  return new Promise((resolve, reject) => {
+    edge.func(GetHardwareMessage)(null, (err, res) => {
+      if (err) {
+        reject(err);
+      }else {
+        resolve(JSON.parse(res as string));
+      }
+    })
+  });
 }
 
 // 设置风扇转速
@@ -23,7 +27,7 @@ function setFanSpeed(fanName: string, speed: number){
   const SetFanSpeed = {
     assemblyFile: dllPath,
     typeName: "LibreHardwareMonitor.Entrypoint.NodeLibreHardwareMonitorLib",
-    methodName: "GetHardwareMessage",
+    methodName: "SetFanSpeed",
   };
 
   return new Promise((resolve, reject)=>{
