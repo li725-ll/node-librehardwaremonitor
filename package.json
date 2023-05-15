@@ -1,12 +1,14 @@
 {
-  "name": "librehardwaremonitor",
-  "version": "1.0.0",
+  "name": "node-librehardwaremonitor",
+  "version": "1.0.1",
   "description": "",
   "main": "dist/main.js",
   "scripts": {
     "commit": "git add . & git-cz",
     "test": "ts-node ./test/test.ts",
-    "build": "tsc"
+    "build": "tsc && node ./tools/movefile.js",
+    "publish": "npm publish",
+    "install": "node tools/install.js"
   },
   "keywords": [],
   "author": "",
