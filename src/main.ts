@@ -19,18 +19,22 @@ function getHardwareMessage(){
 }
 
 // 设置风扇转速
-function setFanSpeed(fanName, speed){
+function setFanSpeed(fanName: string, speed: number){
   const SetFanSpeed = {
     assemblyFile: dllPath,
     typeName: "LibreHardwareMonitor.Entrypoint.NodeLibreHardwareMonitorLib",
     methodName: "GetHardwareMessage",
   };
-  edge.func(SetFanSpeed)({fanName, speed}, (err, res) => {
-    if (err) {
-      console.log(err);
-    }
-    console.log(res);
-  })
+
+  return new Promise((resolve, reject)=>{
+    edge.func(SetFanSpeed)({ fanName, speed },(err, res)=>{
+      if (err){
+        reject(err);
+      }else {
+        resolve(res);
+      }
+    })
+  });
 }
 
 export default {

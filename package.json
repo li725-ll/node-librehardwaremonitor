@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "commit": "git add . & git-cz"
+    "commit": "git add . & git-cz",
+    "test": "ts-node ./test/test.ts"
   },
   "keywords": [],
   "author": "",
