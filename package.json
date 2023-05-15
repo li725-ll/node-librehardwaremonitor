@@ -2,10 +2,11 @@
   "name": "librehardwaremonitor",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/main.js",
   "scripts": {
     "commit": "git add . & git-cz",
-    "test": "ts-node ./test/test.ts"
+    "test": "ts-node ./test/test.ts",
+    "build": "tsc"
   },
   "keywords": [],
   "author": "",
