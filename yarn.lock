@@ -125,6 +125,11 @@
   resolved "https://registry.npmmirror.com/@types/node/-/node-20.1.3.tgz#bc8e7cd8065a5fc355a3a191a68db8019c58bc00"
   integrity sha512-NP2yfZpgmf2eDRPmgGq+fjGjSwFgYbihA8/gK+ey23qT9RkxsgNTZvGOEpXgzIGqesTYkElELLgtKoMQTys5vA==
 
+"@types/node@^20.1.4":
+  version "20.1.4"
+  resolved "https://registry.npmmirror.com/@types/node/-/node-20.1.4.tgz#83f148d2d1f5fe6add4c53358ba00d97fc4cdb71"
+  integrity sha512-At4pvmIOki8yuwLtd7BNHl3CiWNbtclUbNtScGx4OHfBd4/oWoJC8KRCIxXwkdndzhxOsPXihrsOoydxBjlE9Q==
+
 acorn-walk@^8.1.1:
   version "8.2.0"
   resolved "https://registry.npmmirror.com/acorn-walk/-/acorn-walk-8.2.0.tgz#741210f2e2426454508853a2f44d0ab83b7f69c1"
@@ -401,6 +406,14 @@ edge-cs@1.2.1:
   version "1.2.1"
   resolved "https://registry.npmmirror.com/edge-cs/-/edge-cs-1.2.1.tgz#bd1a9ecdb94ef0ed40c894582046749e57045e5a"
   integrity sha512-N5KAeMBhhCbCGmb5oiHJ0KcuTksZzo8lg+uByEUCZAdnLPHizHkk6ZIuuTD63eez7+W25ZSvsGS5+FtymxFoKw==
+
+edge-js@^19.3.0:
+  version "19.3.0"
+  resolved "https://registry.npmmirror.com/edge-js/-/edge-js-19.3.0.tgz#9e52646a41ce45c3a363a4b2d907f215b9dfb5d6"
+  integrity sha512-wp01bWIhGDH0+cduOEToJxbJBaklGe7pRlIPdEKaaeIn/8QdN3OyRGFMM+Gk/zKTUrFCK+nlu+qTKuOQnIyOVg==
+  dependencies:
+    edge-cs "1.2.1"
+    nan "^2.17.0"
 
 electron-edge-js@^23.0.0:
   version "23.0.0"
@@ -1012,7 +1025,7 @@ to-regex-range@^5.0.1:
   dependencies:
     is-number "^7.0.0"
 
-ts-node@^10.8.1:
+ts-node@^10.8.1, ts-node@^10.9.1:
   version "10.9.1"
   resolved "https://registry.npmmirror.com/ts-node/-/ts-node-10.9.1.tgz#e73de9102958af9e1f0b168a6ff320e25adcff4b"
   integrity sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==
@@ -1031,7 +1044,7 @@ ts-node@^10.8.1:
     v8-compile-cache-lib "^3.0.1"
     yn "3.1.1"
 
-tslib@^2.1.0:
+tslib@^2.1.0, tslib@^2.5.0:
   version "2.5.0"
   resolved "https://registry.npmmirror.com/tslib/-/tslib-2.5.0.tgz#42bfed86f5787aeb41d031866c8f402429e0fddf"
   integrity sha512-336iVw3rtn2BUK7ORdIAHTyxHGRIHVReokCR3XjbckJMK7ms8FysBfhLR8IXnAgy7T0PTPNBWKiH514FOW/WSg==
