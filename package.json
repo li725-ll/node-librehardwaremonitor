@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "commit": "git add . & git-cz"
   },
   "keywords": [],
   "author": "",
@@ -17,5 +17,8 @@
     "commitizen": {
       "path": "node_modules/cz-conventional-changelog"
     }
+  },
+  "dependencies": {
+    "electron-edge-js": "^23.0.0"
   }
 }
