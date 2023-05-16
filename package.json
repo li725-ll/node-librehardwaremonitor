@@ -1,7 +1,7 @@
 {
   "name": "node-librehardwaremonitor",
-  "version": "1.0.2",
-  "description": "",
+  "version": "1.0.3",
+  "description": "A nodejs library based on LibreHardwareMonitor for obtaining computer hardware information.",
   "main": "dist/main.js",
   "scripts": {
     "commit": "git add . & git-cz",

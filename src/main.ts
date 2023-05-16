@@ -4,7 +4,7 @@ import { resolve } from "path";
 
 //const dllPath = resolve(__dirname, "../LibreHardwareMonitor/bin/Debug/net472/LibreHardwareMonitorLibNode.dll");
 const dllPath = resolve(__dirname, "./bin/LibreHardwareMonitorLibNode.dll");
-const runInElectron = window.process.versions['electron'];
+const runInElectron = process.versions['electron'];
 
 // 获取硬件信息
 function getHardwareMessage(): Promise<any> {
