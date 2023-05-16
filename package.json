@@ -1,6 +1,6 @@
 {
   "name": "node-librehardwaremonitor",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "dist/main.js",
   "scripts": {
@@ -10,9 +10,9 @@
     "publish": "npm publish",
     "install": "node tools/install.js"
   },
-  "keywords": [],
+  "keywords": ["LibreHardwareMonitor", "C#", "typescript", "node"],
   "author": "",
-  "license": "ISC",
+  "license": "MPL-2.0",
   "devDependencies": {
     "@types/node": "^20.1.4",
     "commitizen": "^4.3.0",
