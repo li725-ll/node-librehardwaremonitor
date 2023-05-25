@@ -1,6 +1,6 @@
 {
   "name": "node-librehardwaremonitor",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A nodejs library based on LibreHardwareMonitor for obtaining computer hardware information.",
   "main": "dist/main.js",
   "scripts": {

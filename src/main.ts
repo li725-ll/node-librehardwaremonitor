@@ -1,13 +1,15 @@
-import edge from "edge-js";
-import electronEdge from "electron-edge-js";
 import { resolve } from "path";
+const runInElectron = process.versions['electron'];
+
+const edgePackage = runInElectron ? "electron-edge-js" : "edge-js";
+
 
 //const dllPath = resolve(__dirname, "../LibreHardwareMonitor/bin/Debug/net472/LibreHardwareMonitorLibNode.dll");
 const dllPath = resolve(__dirname, "./bin/LibreHardwareMonitorLibNode.dll");
-const runInElectron = process.versions['electron'];
 
 // 获取硬件信息
-function getHardwareMessage(): Promise<any> {
+async function getHardwareMessage(): Promise<any> {
+  const edge = await import(edgePackage);
   const GetHardwareMessage = {
    assemblyFile: dllPath,
    typeName: "LibreHardwareMonitor.Entrypoint.NodeLibreHardwareMonitorLib",
@@ -15,28 +17,19 @@ function getHardwareMessage(): Promise<any> {
   };
 
   return new Promise((resolve, reject) => {
-    if (runInElectron){
-      electronEdge.func(GetHardwareMessage)(null, (err, res) => {
-        if (err) {
-          reject(err);
-        } else {
-          resolve(JSON.parse(res as string));
-        }
-      })
-    }else{
-      edge.func(GetHardwareMessage)(null, (err, res) => {
-        if (err) {
-          reject(err);
-        } else {
-          resolve(JSON.parse(res as string));
-        }
-      })
-    }
+    edge.func(GetHardwareMessage)(null, (err: unknown, res: unknown) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(JSON.parse(res as string));
+      }
+    })
   });
 }
 
 // 设置风扇转速
-function setFanSpeed(fanName: string, speed: number): Promise<boolean | Error>{
+async function setFanSpeed(fanName: string, speed: number): Promise<boolean | Error>{
+  const edge = await import(edgePackage);
   const SetFanSpeed = {
     assemblyFile: dllPath,
     typeName: "LibreHardwareMonitor.Entrypoint.NodeLibreHardwareMonitorLib",
@@ -44,23 +37,13 @@ function setFanSpeed(fanName: string, speed: number): Promise<boolean | Error>{
   };
 
   return new Promise((resolve, reject)=>{
-    if (runInElectron) {
-      electronEdge.func(SetFanSpeed)({ fanName, speed }, (err, res) => {
-        if (err) {
-          reject(err);
-        } else {
-          resolve(res as boolean);
-        }
-      })
-    }else {
-      edge.func(SetFanSpeed)({ fanName, speed }, (err, res) => {
-        if (err) {
-          reject(err);
-        } else {
-          resolve(res as boolean);
-        }
-      })
-    }
+    edge.func(SetFanSpeed)({ fanName, speed }, (err: unknown, res: unknown) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(res as boolean);
+      }
+    })
   });
 }
 
