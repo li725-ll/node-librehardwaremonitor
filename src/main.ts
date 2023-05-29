@@ -5,8 +5,8 @@ const edgePackage = runInElectron ? "electron-edge-js" : "edge-js";
 
 
 //const dllPath = resolve(__dirname, "../LibreHardwareMonitor/bin/Debug/net472/LibreHardwareMonitorLibNode.dll");
-const dllPath = resolve(__dirname, "./bin/LibreHardwareMonitorLibNode.dll");
-
+const pathDll = resolve(__dirname, "./bin/LibreHardwareMonitorLibNode.dll");
+const dllPath = pathDll.indexOf("app.asar") > -1 ? pathDll.replace("app.asar", "app.asar.unpacked"): pathDll;
 // 获取硬件信息
 async function getHardwareMessage(): Promise<any> {
   const edge = await import(edgePackage);
