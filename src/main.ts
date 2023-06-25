@@ -8,7 +8,7 @@ const edgePackage = runInElectron ? "electron-edge-js" : "edge-js";
 const pathDll = resolve(__dirname, "./bin/LibreHardwareMonitorLibNode.dll");
 const dllPath = pathDll.indexOf("app.asar") > -1 ? pathDll.replace("app.asar", "app.asar.unpacked"): pathDll;
 // 获取硬件信息
-async function getHardwareMessage(): Promise<any> {
+export async function getHardwareMessage(): Promise<any> {
   const edge = await import(edgePackage);
   const GetHardwareMessage = {
    assemblyFile: dllPath,
@@ -28,7 +28,7 @@ async function getHardwareMessage(): Promise<any> {
 }
 
 // 设置风扇转速
-async function setFanSpeed(fanName: string, speed: number): Promise<boolean | Error>{
+export async function setFanSpeed(fanName: string, speed: number): Promise<boolean | Error>{
   const edge = await import(edgePackage);
   const SetFanSpeed = {
     assemblyFile: dllPath,
